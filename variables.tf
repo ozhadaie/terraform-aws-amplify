@@ -1,21 +1,23 @@
 variable "name" {
-  description = "The name of the amplify app"
+  description = "(Required) The name of the Amplify app"
   type        = string
 }
 
 variable "repository" {
-  description = "The source repository link"
+  description = "(Optional) The repository for an Amplify app"
   type        = string
+  default     = ""
 }
 
 variable "access_token" {
-  description = "Github access token to repository"
+  description = "(Optional) The personal access token for a third-party source control system for an Amplify app. The personal access token is used to create a webhook and a read-only deploy key. The token is not stored."
   type        = string
   sensitive   = true
+  default     = ""
 }
 
 variable "base_directory" {
-  description = "Frontend artifacts baseDirectory"
+  description = "Frontend artifacts base directory"
   type        = string
   default     = "build"
 }
